@@ -9,7 +9,7 @@ export default function Home({ exploreData, cardsData }) {
   return (
     <div className="">
       <Head>
-        <title>AirBnB</title>
+        <title>callumtait-portfolio-1</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
