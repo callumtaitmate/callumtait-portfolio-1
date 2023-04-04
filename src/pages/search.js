@@ -1,6 +1,6 @@
 import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
-import { useRouter } from "next/router";
+import { useRouter } from "next/dist/client/router";
 import { parse, parseISO, formatISO, format, formatISO9075 } from "date-fns";
 import InfoCard from "../../Components/InfoCard";
 function search({ searchResults }) {
