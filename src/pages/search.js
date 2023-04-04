@@ -3,7 +3,7 @@ import Footer from "../../Components/Footer";
 import { useRouter } from "next/dist/client/router";
 import { parse, parseISO, formatISO, format, formatISO9075 } from "date-fns";
 import InfoCard from "../../Components/InfoCard";
-function search({ searchResults }) {
+function Search({ searchResults }) {
   const router = useRouter();
   const { location, startDate, endDate, numberOfGuests } = router.query;
   const formattedStartDate = format(new Date(startDate), "dd MMMM yy");
@@ -53,7 +53,7 @@ function search({ searchResults }) {
   );
 }
 
-export default search;
+export default Search;
 
 export async function getServerSideProps() {
   const searchResults = await fetch("https://www.jsonkeeper.com/b/5NPS").then(
