@@ -11,6 +11,8 @@ export default function Home({ exploreData, cardsData }) {
       <Head>
         <title>callumtait-portfolio-1</title>
         <link rel="icon" href="/favicon.ico" />
+        
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v9.6.0/mapbox-gl.css' rel='stylesheet' />
       </Head>
       <Header />
       <Banner />

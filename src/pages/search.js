@@ -3,6 +3,8 @@ import Footer from "../../Components/Footer";
 import { useRouter } from "next/dist/client/router";
 import { parse, parseISO, formatISO, format, formatISO9075 } from "date-fns";
 import InfoCard from "../../Components/InfoCard";
+import Maps from "../../Components/Maps";
+import 'mapbox-gl/dist/mapbox-gl.css';
 function Search({ searchResults }) {
   const router = useRouter();
   const { location, startDate, endDate, numberOfGuests } = router.query;
@@ -46,6 +48,9 @@ function Search({ searchResults }) {
               )
             )}
           </div>
+        </section>
+        <section className="hidden md:inline-flex lg:min-w-[600px]">
+          <Maps searchResults={searchResults} />
         </section>
       </main>
       <Footer />
