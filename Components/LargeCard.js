@@ -1,7 +1,14 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 function LargeCard({ img, title, description, buttonText}) {
+  const router = useRouter();
   return (
-    <section className="relative py-16 cursor-pointer">
+    <section onClick={() =>
+      router.push(
+        "/search?location=Enfield&startDate=2023-04-19T23%3A00%3A00.000Z&endDate=2023-04-26T23%3A00%3A00.000Z&numberOfGuests=2"
+      )
+    }
+    className="relative py-16 cursor-pointer">
       <div className="relative h-96 min-w-[300px] my-6">
         <Image
           src={img}
