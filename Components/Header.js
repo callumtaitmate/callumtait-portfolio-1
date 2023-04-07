@@ -38,9 +38,9 @@ export default function Header({ placeholder }) {
     });
   };
   return (
-    <header className="sticky top-0 z-50 grid grid-cols-3 bg-white  shadow-md p-3 ">
+    <header className="sticky top-0 z-50 grid grid-cols-3 bg-white  shadow-md p-3">
       <div
-        className="relative flex items-center h-10 md:mx-10 cursor-pointer"
+        className="relative flex items-center h-10 md:mx-10 cursor-pointer mr-2"
         onClick={() => router.push("/")}
       >
         <Image
@@ -55,12 +55,12 @@ export default function Header({ placeholder }) {
           }}
         />
       </div>
-      <div className="flex items-center border-2 rounded-full py-2 pl-2 md:shadow-sm overflow-hidden">
+      <div className="flex items-center text-xs md:text-lg border-2 rounded-full py-2 pl-2 md:shadow-sm overflow-hidden">
         <input
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
           type="text"
-          placeholder={placeholder || "Start your search.."}
+          placeholder={placeholder || "Start your search..."}
           className="flex-grow pl-1 bg-transparent outline-none text-gray-400"
         />
         <SearchIcon className="hidden md:inline-flex h-6 bg-red-400 text-white rounded-full p-2 cursor-pointer md:mx-2" />
