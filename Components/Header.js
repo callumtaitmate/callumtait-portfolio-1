@@ -5,6 +5,8 @@ import {
   GlobeAltIcon,
   MenuAlt1Icon,
   UserCircleIcon,
+  PlusIcon,
+  MinusIcon,
 } from "@heroicons/react/solid";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
@@ -23,6 +25,12 @@ export default function Header({ placeholder }) {
   const handleSelect = (ranges) => {
     setStartDate(ranges.selection.startDate);
     setEndDate(ranges.selection.endDate);
+  };
+  const increase = () => {
+    setNumberOfGuests((numberOfGuests) => numberOfGuests + 1);
+  };
+  const decrease = () => {
+    setNumberOfGuests((numberOfGuests) => numberOfGuests - 1);
   };
   const [numberOfGuests, setNumberOfGuests] = useState(1);
   const resetInput = () => setSearchInput("");
@@ -85,21 +93,35 @@ export default function Header({ placeholder }) {
             <h2 className="text-2xl font-semibold flex-grow shadow-sm">
               Number of Guests
             </h2>
+            {numberOfGuests > 1 && (
+              <button
+                className="text-2xl text-red-500 font-bold mr-6"
+                onClick={() => decrease()}
+              >
+                <MinusIcon className="h-6" />
+              </button>
+            )}
             <UserCircleIcon className="h-5 text-gray-400" />
             <input
               value={numberOfGuests}
               onChange={(e) => setNumberOfGuests(e.target.value)}
               min="1"
-              type="number"
-              className="w-12 pl-2 text-lg font-bold outline-none text-red-400"
+              className="w-12 pl-2 text-lg font-bold outline-none text-red-500"
             ></input>
+
+            <button
+              className="text-2xl text-red-500 font-bold"
+              onClick={() => increase()}
+            >
+              <PlusIcon className="h-6" />
+            </button>
           </div>
           <div className="flex mb-2">
             <button
               className="flex-grow font-semibold text-gray-500 bg-gray-200 rounded-lg cursor-pointer mx-2 shadow-sm"
               onClick={resetInput}
             >
-              Cancel
+              Close
             </button>
             <button
               className="flex-grow font-bold text-white bg-red-500 rounded-lg mx-2 shadow-md cursor-pointer hover:scale-105 transform transition duration-300 ease-out"

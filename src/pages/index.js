@@ -5,14 +5,15 @@ import SmallCard from "../../Components/SmallCard";
 import MediumCard from "../../Components/MediumCard";
 import LargeCard from "../../Components/LargeCard";
 import Footer from "../../Components/Footer";
+import "mapbox-gl/dist/mapbox-gl.css";
 export default function Home({ exploreData, cardsData }) {
   return (
     <div className="">
       <Head>
         <title>callumtait-portfolio-1</title>
         <link rel="icon" href="/favicon.ico" />
+        <link href="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css" rel="stylesheet"></link>
         
-        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v9.6.0/mapbox-gl.css' rel='stylesheet' />
       </Head>
       <Header />
       <Banner />

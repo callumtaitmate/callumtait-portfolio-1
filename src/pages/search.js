@@ -14,7 +14,10 @@ function Search({ searchResults }) {
 
   return (
     <div className="">
+      
+      <link href="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css" rel="stylesheet"></link>
       <Header
+      
         placeholder={`${location} | ${range} | ${numberOfGuests} Guests`}
       />
       <main className="flex">
